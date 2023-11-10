@@ -142,7 +142,7 @@ span {
 }
 
 section {
-  padding: 100px 10%;
+  padding: 100px 5%;
 }
 
 .home {
@@ -341,7 +341,6 @@ a.btn:nth-child(2)::before {
 
 .img-box img {
   width: 100%;
-  margin-left: 6rem;
   max-width: 500px;
   height: auto;
   animation: astronautFloat 3s ease-in-out infinite; /* Adjust animation duration and timing as needed */
@@ -1061,9 +1060,7 @@ backdrop-filter: blur(5px); /* Adjust the blur value as needed */
     overflow: hidden;
   }
   .img-box img {
-    width: 100%;
-    margin-left: 0;
-    max-width: 250px;
+    display: none;
   }
   .liquid-shape {
     display: none;
@@ -1082,9 +1079,6 @@ backdrop-filter: blur(5px); /* Adjust the blur value as needed */
   .img-about p {
     font-size: 1rem;
   }
-  .contact-img {
-    display: none;
-  }
   .social-icons-footer a i {
     font-size: 12px;
   }
@@ -1102,46 +1096,16 @@ backdrop-filter: blur(5px); /* Adjust the blur value as needed */
     width: 100%;
     height: 100%;
   }
-  
 
-
-  /* There is some issue with the mobile widthe newsletter till now I'm just doing display none for the time  */
-
-  /* Till then We have removed the newsletter  */
-
-  /* #newsletter {
-    flex-direction: column;
-    position: relative;
-    left: 0%;
-    top: -34%;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    background-image: url(/assets/b14.png);
-    background-color: #041e42;
-    background-repeat: repeat;
-    background-position: 20% 50%;
-    height: 88%;
-    text-align: center;
-    color: #fff; 
-    height: 200px;
-    z-index: 1111;
-  }
-
-  #newsletter .form {
-    display: flex;
-    width: 100%;
-    margin-top: 15px;
-    padding-left: 50px;
-  } */
 }
 /* Contact form here //////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* NEW CONTACT  */
 
 .contact-img {
-  position: relative;
-  left: -30%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
 #contact-container {
@@ -1150,6 +1114,10 @@ backdrop-filter: blur(5px); /* Adjust the blur value as needed */
     var(--gradient-start-color) 10%,
     var(--gradient-end-color) 70%
   );
+}
+
+.contact{
+  width: 50%;
 }
 
 .contact form {
@@ -1221,6 +1189,7 @@ backdrop-filter: blur(5px); /* Adjust the blur value as needed */
 @media (min-width: 700px) {
   .wrapper {
     display: grid;
+    width: 100%;
     grid-template-columns: 1fr 2fr;
   }
 
@@ -1238,6 +1207,7 @@ backdrop-filter: blur(5px); /* Adjust the blur value as needed */
 /* WRAP CONTAINER CLASS */
 
 .wrapper {
+  display: flex;
   /* background-color: #252830; */
   width: 100%;
 }
@@ -1248,6 +1218,7 @@ backdrop-filter: blur(5px); /* Adjust the blur value as needed */
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  width: 50%;
 }
 
 .contact-span {
@@ -1260,13 +1231,13 @@ backdrop-filter: blur(5px); /* Adjust the blur value as needed */
 /* Contact Form Animation Text  */
 
 #contact-container .company-info h2 {
-  /* font-size: 36px;
-  margin: 20px; */
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-family: arial;
-  /* display: inline-block; */
-  /* margin: 0px 20px; */
   font-weight: 900;
-  /* text-transform: uppercase; */
   text-align: center;
   font-size: 25px;
   line-height: 120%;
