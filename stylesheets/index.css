@@ -1064,7 +1064,12 @@ backdrop-filter: blur(5px); /* Adjust the blur value as needed */
     overflow: hidden;
   }
   .img-box img {
-    display: none;
+    width: 100%;
+    margin-left: 0;
+    max-width: 250px;
+  }
+  .contact-img{
+    display: none !important;
   }
   .wrapper{
     display: grid !important;
