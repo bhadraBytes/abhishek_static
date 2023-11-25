@@ -40,9 +40,30 @@ changeText();
 setInterval(changeText, 3000);
 
 // Circle skill here
-
 const circles = document.querySelectorAll(".circle");
+
+// Function to handle the intersection observer callback
+function handleIntersection(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // If the element is in view, perform the animation
+      animateCircle(entry.target);
+      // Stop observing once the animation is triggered (optional)
+      observer.unobserve(entry.target);
+    }
+  });
+}
+
+// Loop through each circle element and create an observer for it
 circles.forEach((elem) => {
+  // Create an Intersection Observer for each circle element with the callback
+  const observer = new IntersectionObserver((entries) => handleIntersection(entries, observer));
+  // Start observing each circle element
+  observer.observe(elem);
+});
+
+// Function to animate the circle
+function animateCircle(elem) {
   var dots = elem.getAttribute("data-dots");
   var marked = elem.getAttribute("data-percent");
   var percent = Math.floor((dots * marked) / 100);
@@ -58,7 +79,8 @@ circles.forEach((elem) => {
   for (let i = 0; i < percent; i++) {
     pointsMarked[i].classList.add("marked");
   }
-});
+}
+
 
 // Mix it up Portfolio work on Projects
 
@@ -141,4 +163,6 @@ filterButtons.forEach(button => {
     button.classList.add('active');
   });
 });
+
+
 
